@@ -1,0 +1,15 @@
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\bin\Debug\net6.0\Console_List.exe
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\bin\Debug\net6.0\Console_List.deps.json
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\bin\Debug\net6.0\Console_List.runtimeconfig.json
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\bin\Debug\net6.0\Console_List.dll
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\bin\Debug\net6.0\Console_List.pdb
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.csproj.AssemblyReference.cache
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.AssemblyInfoInputs.cache
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.AssemblyInfo.cs
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.csproj.CoreCompileInputs.cache
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.dll
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\refint\Console_List.dll
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.pdb
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\Console_List.genruntimeconfig.cache
+C:\Users\parra.raul\Desktop\Interfaze Garapena\VS\Console_List\Console_List\obj\Debug\net6.0\ref\Console_List.dll
