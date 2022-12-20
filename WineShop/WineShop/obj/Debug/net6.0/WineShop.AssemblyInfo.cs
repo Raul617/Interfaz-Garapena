@@ -12,13 +12,13 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-WineShop-25FB4BC2-2087-4C27-B2D6-D4667537CF59")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("WineShop")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Wineshop-5924a00f-3860-41a0-91e6-cb54c0bb2b5a")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Wineshop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("WineShop")]
-[assembly: System.Reflection.AssemblyTitleAttribute("WineShop")]
+[assembly: System.Reflection.AssemblyProductAttribute("Wineshop")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Wineshop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

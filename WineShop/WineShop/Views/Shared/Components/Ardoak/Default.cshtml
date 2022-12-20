@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WineShop.Models.ArdoaUpeltegi>
+﻿@model IEnumerable<Wineshop.Models.ArdoaUpeltegi>
 
 <ul class="dropdown-menu">
     <li>
@@ -12,30 +12,30 @@
                         {
                             if (item.UpeltegiIzena != izena)
                             {
-                                <a href="#">@Html.DisplayFor(modelItem => item.UpeltegiIzena)</a>
+                                    <a href="#">@Html.DisplayFor(modelItem => item.UpeltegiIzena)</a>
 
-                                <br />
+                                    <br />
                                 izena = item.UpeltegiIzena;
                             }
                         }
                     }
-
                 </div>
+
                 <div class="col-md-8">
-                    @*<img class="img-responsive" src="~/images/wine-white.jpg" />*@
                     @{
                         if (ViewBag.mota == 1)
                         {
-                            <img class="img-fluid" src="~/images/wine-white.jpg" />
+                                <img src="~/images/wine-white.jpg" class="img-fluid" />
                         }
-                        else {
-                            <img class="img-fluid" src="~/images/wine-red.jpg" />
+                        else 
+                        {
+                                <img src="~/images/wine-red.jpg" class="img-fluid" />
                         }
                     }
+
                 </div>
             </div>
         </div>
     </li>
 </ul>
-
 

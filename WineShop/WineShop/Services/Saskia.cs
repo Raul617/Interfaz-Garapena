@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WineShop.Services
+namespace Wineshop.Services
 {
     public class Saskia
     {

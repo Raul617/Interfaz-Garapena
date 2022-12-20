@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
-using WineShop.Models;
+using Wineshop.Models;
 
-namespace WineShop.Services
+
+namespace Wineshop.Services
 {
     public class SaskiaService : ISaskiaService
     {
@@ -31,11 +32,11 @@ namespace WineShop.Services
             {
                 cartitem = saskiaAleaList.FirstOrDefault(s => s.ArdoaId == ardoaId);
             }
-
+           
             if (saskiaAleaList == null || cartitem == null)
             {
                 // Karrito berria sortu
-                cartitem = new SaskiaAlea
+                SaskiaAlea cartitemBerria = new SaskiaAlea
                 {
                     ArdoaId = ardoaId,
                     SaskiaId = saskiaId,
@@ -44,7 +45,7 @@ namespace WineShop.Services
                 };
                 using (var httpClient = new HttpClient())
                 {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(cartitem), Encoding.UTF8,
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(cartitemBerria), Encoding.UTF8,
                    "application/json");
                     var response = await httpClient.PostAsync(rutaTodos, content);
                     response.EnsureSuccessStatusCode();
@@ -63,7 +64,6 @@ namespace WineShop.Services
             }
         }
 
-
         public async Task<List<SaskiaAlea>> SaskiaLortuAleak(string saskiaId)
         {
             //Saskia lortu
@@ -80,8 +80,6 @@ namespace WineShop.Services
             return saskiaAleaList;
         }
 
-
-
         public async Task EskaeraBezeroaGehitu(BezeroaEskaera bezeroaEskaera)
         {
             Uri rutaBezeroEskaera = new Uri("https://localhost:44367/api/BezeroaEskaera/");
@@ -93,9 +91,6 @@ namespace WineShop.Services
                 response.EnsureSuccessStatusCode();
             }
         }
-
-
-
         public async Task EskaeraSortu(BezeroaEskaera bezeroaEskaera, string saskiaId)
         {
             var cartItems = await SaskiaLortuAleak(saskiaId);
@@ -117,7 +112,26 @@ namespace WineShop.Services
                 }
             }
         }
+        public async Task SaskiaKendu(int ardoaId, string saskiaId)
+        {
+            Uri rutasaskia = new Uri(rutaTodos, saskiaId);
+            List<SaskiaAlea> saskiaAleaList = new List<SaskiaAlea>();
+            saskiaAleaList = await SaskiaLortuAleak(saskiaId);
+            SaskiaAlea cartitem = new SaskiaAlea();
+            cartitem = saskiaAleaList.FirstOrDefault(s => s.ArdoaId == ardoaId);
 
+            if (cartitem.Kantitatea > 0) {
 
+                cartitem.Kantitatea--;
+
+            }      
+
+            using (var httpClient = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(cartitem), Encoding.UTF8, "application/json");
+                var response = await httpClient.PutAsync(rutasaskia, content);
+                response.EnsureSuccessStatusCode();
+            }
+        }
     }
 }

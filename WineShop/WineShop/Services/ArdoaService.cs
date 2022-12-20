@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
-using WineShop.Models;
+using Wineshop.Models;
 
-namespace WineShop.Services
+namespace Wineshop.Services
 {
     public class ArdoaService : IArdoaService
     {
-        //private Uri rutaTodos = new Uri("https://localhost/api/Ardoa/");
         private Uri rutaTodos = new Uri("https://localhost:44367/api/Ardoa/");
         public async Task<IList<ArdoaUpeltegi>> GetMota(int id)
         {
@@ -22,6 +21,19 @@ namespace WineShop.Services
             return ardoaUpeltegiList;
         }
 
+        public async Task<List<Ardoa>> GetArdoak()
+        {
+            List<Ardoa> ardoaList = new List<Ardoa>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(rutaTodos))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    ardoaList = JsonConvert.DeserializeObject<List<Ardoa>>(apiResponse);
+                }
+            }
+            return ardoaList;
+        }
 
         public async Task<Ardoa> GetArdoa(int id)
         {
@@ -38,20 +50,5 @@ namespace WineShop.Services
             return ardoa;
         }
 
-        public async Task<List<Ardoa>> GetArdoak()
-        {
-            List<Ardoa> ardoaList = new List<Ardoa>();
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.GetAsync(rutaTodos))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    ardoaList = JsonConvert.DeserializeObject<List<Ardoa>>(apiResponse);
-                }
-            }
-            return ardoaList;
-        }
     }
-
 }
-

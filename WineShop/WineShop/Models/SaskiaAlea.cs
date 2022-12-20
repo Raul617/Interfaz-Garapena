@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WineShop.Models
+namespace Wineshop.Models
 {
     public class SaskiaAlea
     {

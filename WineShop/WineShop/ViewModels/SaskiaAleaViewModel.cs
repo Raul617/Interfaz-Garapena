@@ -1,4 +1,4 @@
-﻿namespace WineShop.ViewModels
+﻿namespace Wineshop.ViewModels
 {
     public class SaskiaAleaViewModel
     {

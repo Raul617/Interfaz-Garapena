@@ -1,19 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WineShop.Services;
-using WineShop.Data;
-using WineShop.Models;
+using Wineshop.Models;
+using Wineshop.Services;
+using Wineshop.ViewModels;
 using WineShop.ViewModels;
-using Microsoft.AspNetCore.Authorization;
-using WineShop.Services;
 
-
-namespace WineShop.Controllers
+namespace Wineshop.Controllers
 {
+    [Authorize]
     public class OrdainduController : Controller
     {
         private readonly ISaskiaService _saskiaService;
-
         public OrdainduController(ISaskiaService saskiaService)
         {
             _saskiaService = saskiaService;
@@ -23,18 +20,9 @@ namespace WineShop.Controllers
             return View();
         }
 
-        // public OrdainduController(WineShopDbContext
-        //context, ISaskiaService saskiaService)
-        // {
-        //     _context = context;
-        //     _saskiaService = saskiaService;
-        // }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index([Bind("Abizena,Helbidea,Herrialdea,Hiria,Izena,Postakodea,Telefonoa")]
-BezeroaEskaera bezeroaEskaera)
+        public async Task<IActionResult> Index([Bind("Abizena,Helbidea,Herrialdea,Hiria,Izena,Postakodea,Telefonoa")] BezeroaEskaera bezeroaEskaera)
         {
             if (ModelState.IsValid)
             {
@@ -54,9 +42,6 @@ BezeroaEskaera bezeroaEskaera)
             }
             return View(bezeroaEskaera);
         }
-
-
-        //método para ver la información de los productos comprados (en este caso los vinos)
         public async Task<IActionResult> Osatu(string bezeroa, string saskiaId)
         {
             var osatuViewModel = new OsatuViewModel(); //ViewModel bat erabiliko dugu
@@ -67,5 +52,5 @@ BezeroaEskaera bezeroaEskaera)
         }
 
     }
-
 }
+

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WineShop.Models;
-using WineShop.Services;
+using Wineshop.Models;
+using Wineshop.Services;
 
-namespace WineShop.Controllers
+namespace Wineshop.Controllers
 {
     public class HomeController : Controller
     {
@@ -11,30 +11,19 @@ namespace WineShop.Controllers
         private readonly IArdoaService _ardoaService;
 
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
         public HomeController(ILogger<HomeController> logger, IArdoaService ardoaService)
         {
             _logger = logger;
             _ardoaService = ardoaService;
-        }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        }
 
         public async Task<IActionResult> Index()
         {
             List<Ardoa> ardoaList = new List<Ardoa>();
             ardoaList = await _ardoaService.GetArdoak();
-
             return View(ardoaList.Where(a => a.Eskaintza == true));
         }
-
 
         public IActionResult Privacy()
         {

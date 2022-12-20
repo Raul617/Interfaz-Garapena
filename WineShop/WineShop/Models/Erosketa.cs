@@ -1,15 +1,14 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
 
-using System.ComponentModel.DataAnnotations;
-
-namespace WineShop.Models
+namespace Wineshop.Models
 {
     public class Erosketa
     {
-        [Key]
-        public int Id { get; set; }
-        public int Kantitatea { get; set; }
-        public int ArdoaId { get; set; }
-        public int BezeroaEskaeraId { get; set; }
+            [Key]
+            public int Id { get; set; }
+            public int Kantitatea { get; set; }
+            public int ArdoaId { get; set; }
+            public int BezeroaEskaeraId { get; set; }
+        
     }
 }

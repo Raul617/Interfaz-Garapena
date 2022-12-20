@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace WineShop.Data.Migrations
+namespace Wineshop.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

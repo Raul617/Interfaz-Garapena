@@ -1,10 +1,11 @@
-﻿using WineShop.Models;
+﻿using Wineshop.Models;
 
-namespace WineShop.Services
+namespace Wineshop.Services
 {
     public interface IArdoaService
     {
         Task<IList<ArdoaUpeltegi>> GetMota(int id);
+
         Task<List<Ardoa>> GetArdoak();
 
         Task<Ardoa> GetArdoa(int id);

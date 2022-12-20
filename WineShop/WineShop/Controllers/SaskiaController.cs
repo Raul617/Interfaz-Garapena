@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using WineShop.Models;
-using WineShop.Services;
-using WineShop.ViewModels;
+﻿using Microsoft.AspNetCore.Mvc;
+using Wineshop.Models;
+using Wineshop.Services;
+using Wineshop.ViewModels;
 
-namespace WineShop.Controllers
+namespace Wineshop.Controllers
 {
     public class SaskiaController : Controller
     {
@@ -36,17 +35,14 @@ namespace WineShop.Controllers
             }
             var saskiaViewModel = new SaskiaViewModel(); //Bistaratuko dugun ViewModel osoa
             saskiaViewModel.SaskiaAleaVMList = saskiaAleaVMList;
-            //saskiaViewModel.SaskiaGuztira = guztira;
             return View(saskiaViewModel);
         }
         public async Task<IActionResult> SaskiaGehitu(int id)
         {
             var cart = Saskia.SaskiaLortu(this.HttpContext); //aurretik sortu dugun Saskia klasea erabiliz
             await _saskiaService.SaskiaGehitu(id, cart.SaskiaId); //zerbitzu berrian karritoan gehitzeko
-            return RedirectToAction("Index", new { id = cart.SaskiaId });
+            return RedirectToAction("Index" , new { id = cart.SaskiaId}); //Saskia bistaratzeko 
         }
-
-
         public async Task<IActionResult> SaskiaGehituAjax(int id, int kantitatea, float salneurria, float guztira)
         {
             var cart = Saskia.SaskiaLortu(this.HttpContext);
@@ -62,21 +58,35 @@ namespace WineShop.Controllers
             return Json(results);
         }
 
+        public async Task<IActionResult> SaskiaKenduAjax(int id, int kantitatea, float salneurria, float guztira)
+        {
+            var cart = Saskia.SaskiaLortu(this.HttpContext);
+            await _saskiaService.SaskiaKendu(id, cart.SaskiaId);
+            if (kantitatea > 0) {
+                kantitatea--;
 
-        //public async Task<IActionResult> SaskiaKenduAjax(int id, int kantitatea, float salneurria, float guztira)
-        //{
-        //    var cart = Saskia.SaskiaLortu(this.HttpContext);
-        //    await _saskiaService.SaskiaKendu(id, cart.SaskiaId);
-        //    kantitatea--;
-        //    var results = new
-        //    {
-        //        mezua = "Zure saskia eguneratu da",
-        //        kantitatea = kantitatea,
-        //        salneurria = salneurria,
-        //        guztira = guztira
-        //    };
-        //    return Json(results);
-        //}
+                     
+            var results = new
+            {
+                mezua = "Zure saskia eguneratu da",
+                kantitatea = kantitatea,
+                salneurria = salneurria,
+                guztira = guztira
+            };
+            return Json(results);
+            }
+            else
+            {
+                var results = new
+                {
+                    mezua = "Zure saskia eguneratu da",
+                    kantitatea = kantitatea,
+                    salneurria = salneurria,
+                    guztira = guztira
+                };
+                return Json(results);
+            }
+        }   
 
     }
 }

@@ -1,5 +1,4 @@
-﻿using WineShop.Models;
-
+﻿using Wineshop.Models;
 namespace WineShop.ViewModels
 {
     public class OsatuViewModel

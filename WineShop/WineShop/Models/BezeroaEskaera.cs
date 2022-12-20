@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WineShop.Models
+namespace Wineshop.Models
 {
     public class BezeroaEskaera
     {
+
         [Key]
 
         [ScaffoldColumn(false)]

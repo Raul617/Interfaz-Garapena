@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WineShop.Models;
 
-namespace WineShop.Data
+namespace Wineshop.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -10,6 +9,5 @@ namespace WineShop.Data
             : base(options)
         {
         }
-        public DbSet<WineShop.Models.BezeroaEskaera> BezeroaEskaera { get; set; }
     }
 }

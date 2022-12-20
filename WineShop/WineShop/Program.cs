@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WineShop.Data;
-using WineShop.Services;
+using Wineshop.Data;
+using Wineshop.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +15,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-//Saioak erabiltzeko
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
@@ -24,12 +23,9 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-
-
-//Zerbitzuak injektatzeko
+//Gure zerbitzuak
 builder.Services.AddScoped<IArdoaService, ArdoaService>();
 builder.Services.AddScoped<ISaskiaService, SaskiaService>();
-
 
 var app = builder.Build();
 

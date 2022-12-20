@@ -1,4 +1,4 @@
-namespace WineShop.Models
+namespace Wineshop.Models
 {
     public class ErrorViewModel
     {

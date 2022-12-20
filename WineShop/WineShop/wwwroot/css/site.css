@@ -1,26 +1,24 @@
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
-
 #searchForm {
     padding-top: 10%;
 }
-
 .bg-menua {
     background-color: #dddada !important;
 }
@@ -33,13 +31,17 @@ body {
     position: static;
 }
 
-    .full-width.dropdown > .dropdown-menu {
-        left: 0;
-    }
+.full-width.dropdown > .dropdown-menu {
+    left: 0;
+}
 
-        .full-width.dropdown > .dropdown-menu > li > a {
-            white-space: normal;
-        }
+.full-width.dropdown > .dropdown-menu > li > a {
+    white-space: normal;
+}
+
+.borgona {
+    color: #981212;
+}
 
 @media screen and (min-width:480px) {
     .dropdown:hover .dropdown-menu {
@@ -70,7 +72,6 @@ body {
         color: #981212;
     }
 
-
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 
 .col-item {
@@ -81,13 +82,7 @@ body {
 
     .col-item .photo img {
         margin: 0 auto;
-        /*width: 100%;*/
-        /*width: 100%;*/
-    }
-
-    .col-item .irudia {
-        height: 150px;
-        width: auto;
+        width: 100%;
     }
 
     .col-item .info {
@@ -170,12 +165,18 @@ body {
 [data-slide="prev"] {
     margin-right: 10px;
 }
-
 .tachado {
     text-decoration: line-through;
 }
 
-
+.col-item .photo img {
+    margin: 0 auto;
+    /*width: 100%;*/
+}
+.col-item .irudia {
+    height: 300px;
+    width: auto;
+}
 .altuera {
     max-height: 100px;
 }
